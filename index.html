@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#073b82">
+<meta name="description" content="Aula teórica de Propriedade para Investimento, CPC 28, Curso de Contabilidade Professor Moreira. Material em telas para celular.">
+<title>Propriedade para Investimento | Professor Moreira</title>
+<style>
+:root { --azul:#073b82; --azul-2:#0b58b2; --escuro:#11294a; --amarelo:#ffe14d; --fundo:#eef5fe; --branco:#ffffff; --borda:#cadbf1; --verde:#11683d; --verde-bg:#ecf9f0; --vermelho:#ac2532; --vermelho-bg:#fff1f1; --fonte:1; }
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; }
+body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--escuro); background:var(--fundo); }
+button { font:inherit; cursor:pointer; }
+button:focus-visible { outline:4px solid #ffb900; outline-offset:2px; }
+.app { display:flex; flex-direction:column; height:100vh; height:100dvh; max-width:1040px; margin:0 auto; background:var(--fundo); }
+header { flex-shrink:0; color:#fff; background:var(--azul); padding:12px 16px 9px; box-shadow:0 3px 10px #0a3b8220; z-index:2; }
+.brand { font-weight:900; text-align:center; line-height:1.25; text-transform:uppercase; letter-spacing:.025em; font-size:clamp(13px,3.5vw,19px); }
+.headerline { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:11px; }
+.topic { font-size:clamp(14px,3.9vw,19px); font-weight:850; color:var(--amarelo); }
+.counter { white-space:nowrap; font-size:14px; font-weight:750; background:#ffffff24; padding:5px 10px; border-radius:50px; }
+.progress { margin-top:10px; height:6px; background:#ffffff40; border-radius:20px; overflow:hidden; }
+.progress>div { background:var(--amarelo); height:100%; width:0; transition:width .22s; border-radius:inherit; }
+.viewport { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:16px clamp(12px,3vw,30px) 25px; scroll-behavior:auto; }
+.slide { display:none; max-width:900px; margin:0 auto; animation:show .18s ease-out; }
+.slide.active { display:block; }
+@keyframes show { from{opacity:.4; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
+h1,h2,h3,p { margin-top:0; }
+h1 { font-size:calc(clamp(31px,8vw,54px)*var(--fonte)); line-height:1.12; letter-spacing:-.035em; }
+h2 { color:var(--azul); font-size:calc(clamp(25px,5.8vw,39px)*var(--fonte)); line-height:1.18; letter-spacing:-.018em; margin-bottom:17px; }
+h3 { color:var(--azul); font-size:calc(clamp(20px,4.7vw,28px)*var(--fonte)); margin-bottom:9px; line-height:1.22; }
+p,li { font-size:calc(clamp(20px,4.55vw,27px)*var(--fonte)); line-height:1.5; }
+.small { font-size:calc(clamp(17px,3.8vw,22px)*var(--fonte)); }
+.eyebrow { display:inline-block; background:var(--amarelo); padding:6px 12px; border-radius:6px; color:#163055; font-size:15px; font-weight:850; text-transform:uppercase; letter-spacing:.04em; margin-bottom:15px; }
+.cover { min-height:100%; display:flex; flex-direction:column; justify-content:center; text-align:center; align-items:center; padding:15px 2px 25px; }
+.cover h1 { color:var(--azul); max-width:760px; margin:12px auto 12px; }
+.cover .subject { text-transform:uppercase; font-size:clamp(19px,5vw,28px); font-weight:900; color:#1754a3; }
+.cover .subtitle { font-size:clamp(20px,4vw,26px); max-width:680px; margin:18px auto 24px; }
+.cover-marker { background:var(--azul); color:var(--amarelo); border-radius:22px; width:100px; height:100px; display:grid; place-items:center; font-size:56px; box-shadow:0 9px 24px #174e9230; }
+.hero-rule { background:#fff5c3; border:2px solid #f3ca3e; border-radius:14px; font-size:calc(clamp(18px,4vw,24px)*var(--fonte)); font-weight:780; padding:15px 18px; width:100%; max-width:720px; line-height:1.42; }
+.card { background:var(--branco); border:2px solid var(--borda); border-radius:16px; padding:clamp(15px,3.6vw,22px); margin:12px 0; box-shadow:0 3px 8px #193f6820; }
+.card p:last-child,.card ul:last-child { margin-bottom:0; }
+.card.tint { background:#f6faff; border-color:#a9caec; }
+.card.gold { background:#fffbea; border-color:#e8c84a; }
+.card.success { background:var(--verde-bg); border-color:#9fd5b0; }
+.card.danger { background:var(--vermelho-bg); border-color:#eeadb2; }
+.pill { display:inline-block; font-size:calc(clamp(15px,3.7vw,19px)*var(--fonte)); font-weight:850; border-radius:50px; background:#e3effc; color:var(--azul); padding:5px 12px; margin:2px 6px 10px 0; }
+.pill.yellow { background:#ffe36a; color:#243a4d; }
+.pill.green { color:#09512e; background:#d9f7e4; }
+.pill.red { color:#942233; background:#ffe0e1; }
+.important { color:var(--azul); font-weight:850; }
+.yes { color:var(--verde); font-weight:900; }
+.no { color:var(--vermelho); font-weight:900; }
+ul { padding-left:24px; margin:10px 0; }
+li { padding:0 0 5px 2px; }
+.rule { border-left:7px solid var(--amarelo); background:#fffbe9; padding:12px 15px; font-size:calc(clamp(19px,4.3vw,25px)*var(--fonte)); line-height:1.42; border-radius:0 12px 12px 0; margin:15px 0; font-weight:730; }
+.arrow { display:block; font-size:28px; text-align:center; color:var(--azul-2); font-weight:950; padding:2px 0; }
+.path { display:grid; grid-template-columns:1fr auto 1fr; gap:9px; align-items:center; margin:15px 0; }
+.path .node { display:grid; place-items:center; text-align:center; min-height:75px; border-radius:12px; padding:10px; background:#eaf3ff; border:2px solid #8fb6e8; font-weight:900; font-size:calc(clamp(17px,4vw,23px)*var(--fonte)); line-height:1.2; }
+.path .connector { color:var(--azul-2); font-size:29px; font-weight:900; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.grid2>.card { margin:0; }
+.amount { font-size:calc(clamp(20px,4.9vw,29px)*var(--fonte)); font-weight:850; }
+.amount small { font-size:.75em; font-weight:600; }
+.result { border-radius:10px; padding:10px; margin-top:10px; font-size:calc(clamp(19px,4vw,23px)*var(--fonte)); font-weight:850; line-height:1.4; }
+.result.good { background:#dff4e4; color:#125a33; }
+.result.bad { background:#ffe1e2; color:#a52b37; }
+.mini-title { font-size:calc(clamp(17px,3.8vw,21px)*var(--fonte)); font-weight:900; text-transform:uppercase; color:#305c9a; margin-bottom:7px; }
+.note { font-size:calc(clamp(16px,3.8vw,20px)*var(--fonte)); color:#465a71; line-height:1.4; margin-top:17px; }
+.summary-item { background:#fff; border:2px solid #c4d8ee; border-radius:12px; padding:13px 15px; margin:10px 0; font-size:calc(clamp(19px,4.3vw,25px)*var(--fonte)); line-height:1.35; }
+.summary-item strong { color:var(--azul); }
+.footer { flex-shrink:0; background:#fff; border-top:2px solid #c5d8ed; padding:10px 12px max(10px,env(safe-area-inset-bottom)); box-shadow:0 -5px 20px #11396712; z-index:2; }
+.tools { display:flex; gap:8px; justify-content:space-between; align-items:center; padding-bottom:8px; }
+.tools-left,.tools-right { display:flex; align-items:center; gap:7px; }
+.tool { background:#edf4fe; color:var(--azul); border:1px solid #b3cceb; border-radius:9px; padding:6px 9px; min-height:35px; font-size:14px; font-weight:850; }
+.tools .hint { font-size:13px; color:#54708d; font-weight:700; }
+.navigation { display:grid; grid-template-columns:1fr .72fr 1.25fr; gap:8px; }
+.nav { min-height:55px; border-radius:12px; font-size:clamp(15px,4.2vw,21px); font-weight:900; padding:7px 4px; border:0; }
+.nav.prev { color:#073b82; background:#e4efff; border:2px solid #a4c5eb; }
+.nav.restart { color:#8f3d00; background:#ffebb4; border:2px solid #edce68; }
+.nav.next { color:#fff; background:var(--azul); border:2px solid var(--azul); }
+.nav:disabled { opacity:.32; cursor:not-allowed; }
+.overlay { position:fixed; inset:0; z-index:20; display:none; background:#071b37ba; padding:clamp(15px,4vw,35px); }
+.overlay.show { display:flex; align-items:center; justify-content:center; }
+.dialog { width:min(100%,620px); max-height:88dvh; overflow-y:auto; background:#fff; border-radius:16px; padding:20px; box-shadow:0 18px 60px #0415256b; }
+.dialog-head { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:15px; }
+.dialog h2 { font-size:28px; margin:0; }
+.dialog button.close { font-size:26px; background:#e9f0f8; color:#123860; border:0; border-radius:10px; width:43px; height:43px; }
+.topic-list { display:grid; gap:8px; }
+.topic-list button { text-align:left; background:#f4f8fe; border:1px solid #c6d7ec; border-radius:11px; padding:11px 13px; color:#173961; font-size:17px; font-weight:800; }
+.topic-list button.selected { background:#ffefb2; border-color:#dbbb35; }
+.topic-list .num { display:inline-grid; place-items:center; width:29px; height:29px; border-radius:50%; background:var(--azul); color:white; margin-right:8px; font-size:13px; }
+@media (max-width:560px){ .grid2 { grid-template-columns:1fr; } .path {gap:6px;} .cover-marker {height:78px;width:78px;font-size:44px;} .tools .hint {display:none;} }
+@media (prefers-reduced-motion:reduce) { .slide { animation:none; } .progress>div {transition:none;} }
+@media print { .app { display:block; height:auto; max-width:100%; } header,.footer,.overlay {display:none !important;} .viewport { overflow:visible; padding:0; } .slide,.slide.active { display:block !important; min-height:90vh; break-after:page; padding:35px;} body{background:#fff;} }
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="brand">Curso de Contabilidade Professor Moreira</div>
+ <div class="headerline"><span class="topic">CPC 28 • Propriedade para Investimento</span><span id="counter" class="counter" aria-live="polite">1 / 18</span></div>
+ <div class="progress"><div id="bar"></div></div>
+</header>
+<main class="viewport" id="viewport" aria-label="Conteúdo teórico da aula">
+ <section class="slide active" data-title="Capa" aria-labelledby="capa">
+  <div class="cover">
+   <div class="cover-marker" aria-hidden="true">▣</div>
+   <span class="eyebrow">Aula teórica • FGV</span>
+   <h1 id="capa">PROPRIEDADE PARA INVESTIMENTO</h1>
+   <div class="subject">CPC 28</div>
+   <p class="subtitle">Teoria organizada em telas, com leitura fácil no celular.</p>
+   <div class="hero-rule">Imóvel para gerar <strong>aluguéis</strong>, obter <strong>valorização do capital</strong> ou ambos.</div>
+   <p class="note">Use a seta <strong>Avançar</strong> para começar. O progresso fica salvo neste aparelho.</p>
+  </div>
+ </section>
+ <section class="slide" data-title="Conceito" aria-labelledby="s1">
+  <span class="eyebrow">01 • Conceito</span><h2 id="s1">O que é propriedade para investimento?</h2>
+  <div class="card tint"><p>É o <strong>terreno ou edifício</strong> — ou parte de edifício, ou ambos — mantido para:</p><span class="pill green">Receber aluguel</span><span class="pill green">Valorização do capital</span><span class="pill green">Ambas as finalidades</span></div>
+  <div class="card gold"><p>O imóvel pode ser mantido pelo <strong>proprietário</strong> ou pelo <strong>arrendatário como ativo de direito de uso</strong>.</p></div>
+  <div class="rule">A classificação depende da <strong>finalidade do imóvel</strong>.</div>
+ </section>
+ <section class="slide" data-title="Quando não é PPI" aria-labelledby="s2">
+  <span class="eyebrow">02 • Exclusões</span><h2 id="s2">O que NÃO é propriedade para investimento?</h2>
+  <div class="card danger"><h3>Uso próprio</h3><p>Imóvel utilizado na <strong>produção</strong>, no fornecimento de bens ou serviços ou em <strong>atividades administrativas</strong>.</p><p class="no">Classificação: Imobilizado.</p></div>
+  <div class="card danger"><h3>Venda habitual</h3><p>Imóvel mantido para <strong>venda no curso ordinário do negócio</strong>.</p><p class="no">Classificação: Estoques.</p></div>
+  <div class="rule">Não basta ser um imóvel: é o <strong>uso pretendido</strong> que determina a conta.</div>
+ </section>
+ <section class="slide" data-title="Classificação no balanço" aria-labelledby="s3">
+  <span class="eyebrow">03 • Balanço patrimonial</span><h2 id="s3">Em qual grupo fica?</h2>
+  <div class="card tint" style="text-align:center"><div class="mini-title">Balanço Patrimonial</div><div class="path"><div class="node">ATIVO NÃO CIRCULANTE</div><div class="connector">➜</div><div class="node">INVESTIMENTOS</div></div><p><strong>Propriedade para investimento</strong></p></div>
+  <div class="card gold"><p>Exemplo: terreno mantido para valorização de capital a longo prazo.</p><p class="important">Ativo Não Circulante → Investimentos.</p></div>
+ </section>
+ <section class="slide" data-title="Exemplos: terrenos" aria-labelledby="s4">
+  <span class="eyebrow">04 • Exemplos do CPC 28</span><h2 id="s4">Terrenos: quando são PPI?</h2>
+  <div class="card"><h3>Terreno para valorização</h3><p>Terreno mantido para <strong>valorização de capital a longo prazo</strong>, e não para venda a curto prazo no curso normal dos negócios.</p></div>
+  <div class="card"><h3>Uso futuro indeterminado</h3><p>Se a entidade ainda não decidiu entre uso próprio ou venda a curto prazo, o terreno é tratado como <strong>mantido para valorização do capital</strong>.</p></div>
+  <div class="rule">FGV: terreno com uso ainda não definido → <strong>Propriedade para investimento</strong>.</div>
+ </section>
+ <section class="slide" data-title="Exemplos: edifícios" aria-labelledby="s5">
+  <span class="eyebrow">05 • Exemplos do CPC 28</span><h2 id="s5">Edifícios: quando são PPI?</h2>
+  <div class="card"><h3>Edifício arrendado</h3><p>Edifício de propriedade da entidade, ou ativo de direito de uso, <strong>arrendado sob um ou mais arrendamentos operacionais</strong>.</p></div>
+  <div class="card"><h3>Edifício desocupado</h3><p>Mesmo vazio, é PPI se estiver <strong>mantido para futuro arrendamento operacional</strong>.</p></div>
+  <div class="rule">Não precisa estar alugado <strong>hoje</strong> para ser propriedade para investimento.</div>
+ </section>
+ <section class="slide" data-title="PPI em construção" aria-labelledby="s6">
+  <span class="eyebrow">06 • Exemplo do CPC 28</span><h2 id="s6">E a propriedade ainda em construção?</h2>
+  <div class="card tint"><p>O CPC 28 inclui a <strong>propriedade em construção ou desenvolvimento</strong> que será utilizada futuramente como propriedade para investimento.</p></div>
+  <div class="path"><div class="node">EM CONSTRUÇÃO</div><div class="connector">➜</div><div class="node">FUTURA PPI</div></div>
+  <div class="rule">O destino pretendido do imóvel é fundamental para sua classificação.</div>
+ </section>
+ <section class="slide" data-title="Serviços insignificantes" aria-labelledby="s7">
+  <span class="eyebrow">07 • Serviços de apoio</span><h2 id="s7">Serviços INSIGNIFICANTES</h2>
+  <div class="card success"><p>Se os serviços de apoio prestados aos ocupantes forem <strong>insignificantes em relação ao acordo como um todo</strong>, o imóvel continua sendo propriedade para investimento.</p></div>
+  <div class="card"><h3>Exemplo do CPC 28</h3><p>Prédio de escritórios alugado a terceiros, com <strong>segurança e manutenção</strong> fornecidas pelo proprietário.</p></div>
+  <div class="result good">Serviços insignificantes → PROPRIEDADE PARA INVESTIMENTO.</div>
+ </section>
+ <section class="slide" data-title="Serviços significativos" aria-labelledby="s8">
+  <span class="eyebrow">08 • Serviços de apoio</span><h2 id="s8">Serviços SIGNIFICATIVOS</h2>
+  <div class="card danger"><p>Se os serviços prestados aos ocupantes são <strong>significativos em relação ao acordo como um todo</strong>, o imóvel é tratado como propriedade ocupada pelo proprietário.</p></div>
+  <div class="card"><h3>Exemplo do CPC 28</h3><p><strong>Hotel administrado pelo proprietário:</strong> os serviços oferecidos aos hóspedes são significativos.</p></div>
+  <div class="result bad">Serviços significativos → IMOBILIZADO.</div>
+ </section>
+ <section class="slide" data-title="Mensuração inicial" aria-labelledby="s9">
+  <span class="eyebrow">09 • Mensuração inicial</span><h2 id="s9">Na aquisição: mensuração pelo CUSTO</h2>
+  <div class="card tint"><p>O CPC 28 determina que a propriedade para investimento seja <strong>inicialmente mensurada pelo custo</strong>.</p></div>
+  <div class="card gold"><div class="mini-title">Regra importante</div><p><strong>Os custos de transação</strong> devem ser incluídos na mensuração inicial.</p></div>
+  <div class="path"><div class="node">AQUISIÇÃO</div><div class="connector">➜</div><div class="node">CUSTO INICIAL</div></div>
+ </section>
+ <section class="slide" data-title="Mensuração subsequente" aria-labelledby="s10">
+  <span class="eyebrow">10 • Após reconhecer</span><h2 id="s10">Dois modelos de mensuração</h2>
+  <div class="grid2"><div class="card success"><h3>VALOR JUSTO</h3><p>Valor reconhecido conforme o valor justo do imóvel.</p><p class="yes">Não deprecia.</p></div><div class="card gold"><h3>CUSTO</h3><p>Modelo de custo, com aplicação das regras de depreciação.</p><p class="important">Deprecia, quando aplicável.</p></div></div>
+  <div class="rule">Após o reconhecimento inicial, a entidade escolhe entre o <strong>método do valor justo</strong> e o <strong>método do custo</strong>.</div>
+  <p class="note">O CPC 28, item 32A, admite escolhas por grupos específicos de propriedades ligadas a passivos com retornos relacionados aos ativos e para as demais propriedades.</p>
+ </section>
+ <section class="slide" data-title="Modelo do valor justo" aria-labelledby="s11">
+  <span class="eyebrow">11 • Valor justo</span><h2 id="s11">Como funciona o VALOR JUSTO?</h2>
+  <div class="card success"><h3>Valorização do imóvel</h3><p>Quando o valor justo <strong>aumenta</strong>, o ganho é reconhecido no <strong>resultado</strong>.</p><div class="result good">Ganho → Receita / Resultado</div></div>
+  <div class="card danger"><h3>Desvalorização do imóvel</h3><p>Quando o valor justo <strong>diminui</strong>, a perda é reconhecida no <strong>resultado</strong>.</p><div class="result bad">Perda → Despesa / Resultado</div></div>
+  <div class="rule">No método do valor justo, a PPI <strong>não é depreciada</strong>.</div>
+ </section>
+ <section class="slide" data-title="Modelo do custo" aria-labelledby="s12">
+  <span class="eyebrow">12 • Custo</span><h2 id="s12">Como funciona o método do CUSTO?</h2>
+  <div class="card gold"><p>Após o reconhecimento inicial, a propriedade permanece mensurada pelo <strong>modelo do custo</strong>.</p><p>A depreciação é tratada <strong>como no imobilizado</strong>, quando aplicável.</p></div>
+  <div class="grid2"><div class="card success"><div class="mini-title">Valor justo</div><p class="yes">Não deprecia.</p></div><div class="card danger"><div class="mini-title">Custo</div><p class="no">Deprecia, quando cabível.</p></div></div>
+  <div class="rule">Pegadinha FGV: <strong>não confundir</strong> os efeitos do modelo de custo com os do valor justo.</div>
+ </section>
+ <section class="slide" data-title="Estoque vira PPI" aria-labelledby="s13">
+  <span class="eyebrow">13 • Transferência</span><h2 id="s13">ESTOQUE → Propriedade para investimento</h2>
+  <div class="path"><div class="node">ESTOQUES<br><span class="small">Valor contábil</span></div><div class="connector">➜</div><div class="node">PPI<br><span class="small">Valor justo</span></div></div>
+  <div class="card success"><h3>Valor justo MAIOR</h3><p>Contábil: <strong>R$ 500</strong> | Justo: <strong>R$ 700</strong></p><div class="result good">Diferença de R$ 200 → RECEITA.</div></div>
+  <div class="card danger"><h3>Valor justo MENOR</h3><p>Contábil: <strong>R$ 500</strong> | Justo: <strong>R$ 400</strong></p><div class="result bad">Diferença de R$ 100 → DESPESA.</div></div>
+  <p class="note">Exemplos de transferência para PPI mensurada a valor justo, conforme o quadro teórico do PDF.</p>
+ </section>
+ <section class="slide" data-title="Imobilizado vira PPI" aria-labelledby="s14">
+  <span class="eyebrow">14 • Transferência</span><h2 id="s14">IMOBILIZADO → Propriedade para investimento</h2>
+  <div class="path"><div class="node">IMOBILIZADO<br><span class="small">Valor contábil</span></div><div class="connector">➜</div><div class="node">PPI<br><span class="small">Valor justo</span></div></div>
+  <div class="card success"><h3>Valor justo MAIOR</h3><p>Contábil: <strong>R$ 500</strong> | Justo: <strong>R$ 700</strong></p><div class="result good">Diferença de R$ 200 → A.A.P. (Patrimônio Líquido).</div></div>
+  <div class="card danger"><h3>Valor justo MENOR</h3><p>Contábil: <strong>R$ 500</strong> | Justo: <strong>R$ 400</strong></p><div class="result bad">Diferença de R$ 100 → DESPESA.</div></div>
+  <p class="note">A.A.P. significa Ajustes de Avaliação Patrimonial, conforme o quadro apresentado no material.</p>
+ </section>
+ <section class="slide" data-title="PPI muda de uso" aria-labelledby="s15">
+  <span class="eyebrow">15 • Transferência</span><h2 id="s15">PPI → Imobilizado ou Estoques</h2>
+  <div class="card tint"><p>Quando uma propriedade para investimento passa a ter <strong>outra finalidade</strong>, pode haver transferência de classificação.</p></div>
+  <div class="grid2"><div class="card"><h3>Uso próprio</h3><p>PPI → <strong>Imobilizado</strong>.</p></div><div class="card"><h3>Destinação à venda</h3><p>PPI → <strong>Estoques</strong>.</p></div></div>
+  <div class="card gold"><p>Para PPI mensurada pelo valor justo, o <strong>valor justo na data da alteração do uso</strong> é a referência da transferência.</p></div>
+ </section>
+ <section class="slide" data-title="Quadro comparativo" aria-labelledby="s16">
+  <span class="eyebrow">16 • Comparação FGV</span><h2 id="s16">Não confunda os tratamentos</h2>
+  <div class="summary-item"><strong>PPI — Mensuração inicial:</strong> CUSTO, incluindo custos de transação.</div>
+  <div class="summary-item"><strong>PPI — Método do valor justo:</strong> Não deprecia; ganhos e perdas no resultado.</div>
+  <div class="summary-item"><strong>PPI — Método do custo:</strong> Depreciação quando aplicável.</div>
+  <div class="summary-item"><strong>Estoques → PPI:</strong> Diferença para o valor justo no resultado (receita ou despesa).</div>
+  <div class="summary-item"><strong>Imobilizado → PPI:</strong> Aumento para A.A.P.; redução para despesa, conforme regra resumida no material.</div>
+ </section>
+ <section class="slide" data-title="Resumo final" aria-labelledby="s17">
+  <span class="eyebrow">17 • Revisão da teoria</span><h2 id="s17">MAPA FINAL — CPC 28</h2>
+  <div class="card tint"><div class="mini-title">É propriedade para investimento?</div><p><strong>Renda de aluguel ou valorização do capital:</strong> SIM.</p><p><strong>Uso próprio ou revenda habitual:</strong> NÃO.</p></div>
+  <div class="card gold"><div class="mini-title">Onde fica?</div><p><strong>Ativo Não Circulante → Investimentos.</strong></p></div>
+  <div class="card"><div class="mini-title">Como mensurar?</div><p><strong>Inicial:</strong> custo + custos de transação.</p><p><strong>Depois:</strong> valor justo ou custo.</p></div>
+  <div class="card success"><p><strong>Regra de ouro FGV:</strong> o destino do imóvel define a classificação; o método escolhido define a mensuração subsequente.</p></div>
+  <p class="note">Fim da parte teórica. Para rever, use <strong>Reiniciar</strong> ou abra o <strong>Sumário</strong>.</p>
+ </section>
+</main>
+<footer class="footer">
+ <div class="tools"><div class="tools-left"><button type="button" class="tool" id="sumario">☰ Sumário</button><span class="hint">Deslize a tela para mudar de assunto</span></div><div class="tools-right"><button type="button" class="tool" id="minus" aria-label="Diminuir letras">A−</button><button type="button" class="tool" id="plus" aria-label="Aumentar letras">A+</button></div></div>
+ <nav class="navigation" aria-label="Navegar pela aula"><button type="button" id="prev" class="nav prev">← Voltar</button><button type="button" id="reset" class="nav restart">↺ Reiniciar</button><button type="button" id="next" class="nav next">Avançar →</button></nav>
+</footer>
+</div>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-hidden="true"><div class="dialog"><div class="dialog-head"><h2 id="dialog-title">Sumário da aula</h2><button type="button" class="close" id="close" aria-label="Fechar sumário">×</button></div><div class="topic-list" id="topic-list"></div></div></div>
+<script>
+(function(){
+  'use strict';
+  const slides=Array.from(document.querySelectorAll('.slide'));
+  const $=id=>document.getElementById(id);
+  const key='prof-moreira-cpc28-teoria-posicao-v1';
+  const fkey='prof-moreira-cpc28-teoria-fonte-v1';
+  let index=0;
+  try { const s=Number(localStorage.getItem(key)); if(Number.isInteger(s)&&s>=0&&s<slides.length) index=s; } catch(e){}
+  let scale=1;
+  try { const s=Number(localStorage.getItem(fkey)); if(s>=.85&&s<=1.45) scale=s; } catch(e){}
+  function font(){ document.documentElement.style.setProperty('--fonte',String(scale)); try{ localStorage.setItem(fkey,String(scale)); }catch(e){} }
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    slides[index].classList.remove('active'); slides[index].setAttribute('aria-hidden','true');
+    index=i; slides[index].classList.add('active'); slides[index].removeAttribute('aria-hidden');
+    $('counter').textContent=(index+1)+' / '+slides.length;
+    $('bar').style.width=((index+1)/slides.length*100)+'%';
+    $('prev').disabled=index===0;
+    $('next').disabled=index===slides.length-1;
+    $('next').textContent=index===slides.length-1?'Concluído ✓':'Avançar →';
+    $('viewport').scrollTop=0;
+    try{localStorage.setItem(key,String(index));}catch(e){}
+    document.title=slides[index].dataset.title+' | PPI — Professor Moreira';
+  }
+  slides.forEach(s=>s.setAttribute('aria-hidden','true'));
+  $('prev').addEventListener('click',()=>go(index-1));
+  $('next').addEventListener('click',()=>go(index+1));
+  $('reset').addEventListener('click',()=>go(0));
+  $('plus').addEventListener('click',()=>{scale=Math.min(1.45,Math.round((scale+.1)*100)/100);font();});
+  $('minus').addEventListener('click',()=>{scale=Math.max(.85,Math.round((scale-.1)*100)/100);font();});
+  const overlay=$('overlay'), list=$('topic-list');
+  slides.forEach((slide,i)=>{
+    const b=document.createElement('button'); b.type='button';
+    const n=document.createElement('span'); n.className='num'; n.textContent=String(i+1);
+    b.appendChild(n); b.appendChild(document.createTextNode(slide.dataset.title));
+    b.addEventListener('click',()=>{go(i);hideMenu();}); list.appendChild(b);
+  });
+  function showMenu(){Array.from(list.children).forEach((b,i)=>b.classList.toggle('selected',i===index));overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');$('close').focus();}
+  function hideMenu(){overlay.classList.remove('show');overlay.setAttribute('aria-hidden','true');$('sumario').focus();}
+  $('sumario').addEventListener('click',showMenu);
+  $('close').addEventListener('click',hideMenu);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)hideMenu();});
+  document.addEventListener('keydown',e=>{
+    if(overlay.classList.contains('show')) {if(e.key==='Escape')hideMenu();return;}
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ if(e.target.tagName==='BUTTON')return;go(index+1); }
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){if(e.target.tagName==='BUTTON')return;go(index-1);}
+  });
+  let xStart=null, yStart=null;
+  const vp=$('viewport');
+  vp.addEventListener('touchstart',e=>{if(e.touches.length===1){xStart=e.touches[0].clientX;yStart=e.touches[0].clientY;}},{passive:true});
+  vp.addEventListener('touchend',e=>{if(xStart===null||e.changedTouches.length!==1)return;const dx=e.changedTouches[0].clientX-xStart;const dy=e.changedTouches[0].clientY-yStart;xStart=null;yStart=null;if(Math.abs(dx)>75&&Math.abs(dx)>Math.abs(dy)*1.4){go(index+(dx<0?1:-1));}},{passive:true});
+  font();go(index);
+})();
+</script>
+</body>
+</html>
